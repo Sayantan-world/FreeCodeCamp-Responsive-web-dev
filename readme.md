@@ -7,7 +7,7 @@
 ### 3) Product Landing Page
 ### 4) Technical Documentation Page
 ### 5) Personal Portfolio Webpage
-### 6) Certificate
+### Certificate
 ---
 ![](https://github.com/Sayantan-world/FreeCodeCamp-Responsive-web-dev/blob/master/Certificate/freeCodeCamp-Responsive-web-dev.png?raw=true)
 ---
