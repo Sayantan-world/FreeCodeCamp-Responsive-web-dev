@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Python3 | Documentation Page</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <header>Python3 Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li>
+          <a class="nav-link" href="#Whetting_Your_Appetite">Whetting Your Appetite</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Python2_vs_Python3">Python2 vs Python3</a>
+        </li>
+        <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+        <li><a class="nav-link" href="#Variables">Variables</a></li>
+        <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+        <li><a class="nav-link" href="#Global_Local_and_Non_Local_Variables">Global Local and Non Local Variables</a></li>
+        <li><a class="nav-link" href="#Constants">Constants</a></li>
+        <li><a class="nav-link" href="#Data_types">Data types</a></li>
+        <li>
+          <a class="nav-link" href="#if...else_statement">if...else statement</a>
+        </li>
+        <li><a class="nav-link" href="#while_statement">while statement</a></li>
+        <li>
+          <a class="nav-link" href="#Function_declarations">Function declarations</a>
+        </li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its
+            interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.
+          </p>
+          <p>
+            The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Whetting_Your_Appetite">
+        <header>Whetting Your Appetite</header>
+        <article>
+          <p>If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo
+            files in a complicated way. Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.<br><br>
+            If you’re a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you’re writing a test suite for such a library and find
+            writing the testing code a tedious task. Or maybe you’ve written a program that could use an extension language, and you don’t want to design and implement a whole new language for your application.<br><br>
+            Python is just the language for you.</p>
+        </article>
+      </section>
+      <section class="main-section" id="Python2_vs_Python3">
+        <header>Python2 vs Python3</header>
+        <article>
+          <p>
+            Since Python 2 has been the most popular version for over a decade and a half, it is still entrenched in the software at certain companies.
+            However, since more companies are moving from Python 2 to 3, someone who wants to learn Python programming for beginners may wish to avoid spending time on a version that is becoming obsolete.
+          </p>
+          <p>
+            Click <a href="https://learntocodewith.me/programming/python/python-2-vs-python-3/" target="_blank">here</a> to know more
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Hello_world">
+        <header>Hello world</header>
+        <article>
+          To get started with writing Python, open the Idle and write your
+          first "Hello world" Python code:
+          <code>print("Hello World")</code>
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <p>
+          Variables are nothing but reserved memory locations to store values. It means that when you create a variable, you reserve some space in the memory.
+          Based on the data type of a variable, the interpreter allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to the variables, you can store integers, decimals or characters in
+          these variables.<br><br>
+          Python variables do not need explicit declaration to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.
+        </p>
+      </section>
+      <section class="main-section" id="Variable_scope">
+        <header>Variable scope</header>
+        <article>
+          <p>
+            Variables can only reach the area in which they are defined, which is called scope. Think of it as the area of code where variables can be used. Python supports global variables (usable in the entire program) and local variables.<br><br>
+            By default, all variables declared in a function are local variables. To access a global variable inside a function, it’s required to explicitly define ‘global variable’.
+          </p>
+          <br>
+          <p><strong>Example</strong><br><br>
+            Below we’ll examine the use of local variables and scope. This will not work:
+          </p>
+          <code>
+            #!/usr/bin/python
+
+            def f(x,y):
+                print('You called f(x,y) with the value x = ' + str(x) + ' and y = ' + str(y))
+                print('x * y = ' + str(x*y))
+                z = 4 # cannot reach z, so THIS WON'T WORK
+
+            z = 3
+            f(3,2)</code>
+          <p>but this will:</p>
+          <code>
+            #!/usr/bin/python
+
+            def f(x,y):
+                z = 3
+                print('You called f(x,y) with the value x = ' + str(x) + ' and y = ' + str(y))
+                print('x * y = ' + str(x*y))
+                print(z) # can reach because variable z is defined in the function
+
+            f(3,2)</code>
+        </article>
+      </section>
+      <section class="main-section" id="Global_Local_and_Non_Local_Variables">
+        <header>Global Local and Non Local Variables</header>
+        <article>
+          <p>
+            The way Python uses global and local variables is maverick. While in many or most other programming languages variables are treated as global if not otherwise declared, Python deals with variables the other way around. They are local, if
+            not otherwise declared. The driving reason behind this approach is that global variables are generally bad practice and should be avoided. In most cases where you are tempted to use a global variable, it is better to utilize a parameter
+            for getting a value into a function or return a value to get it out. Like in many other program structures, Python also imposes good programming habit by design.
+          </p>
+          <p>
+            So when you define variables inside a function definition, they are local to this function by default. This means that anything you will do to such a variable in the body of the function will have no effect on other variables outside of
+            the function, even if they have the same name. This means that the function body is the scope of such a variable, i.e. the enclosing context where this name with its values is associated.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Constants">
+        <header>Constants</header>
+        <article>
+          <p>
+            In Python, constants are usually declared and assigned on a module. Here, the module means a new file containing variables, functions etc which is imported to main file. Inside the module, constants are written in all capital letters and
+            underscores separating the words.
+          </p>
+          <code>Example: Create a const.py
+            PI = 3.14
+            GRAVITY = 9.8</code>
+          <code>Import the module
+            import constant
+            print(constant.PI)
+            print(constant.GRAVITY)</code>
+          <code>Output:
+            3.14
+            9.8</code>
+        </article>
+      </section>
+      <section class="main-section" id="Data_types">
+        <header>Data types</header>
+        <article>
+          <p>Basic Data Types in Python:</p>
+          <ul>
+            <li>Integers</li>
+            <li>Floating-Point Numbers</li>
+            <li>Complex Numbers</li>
+            <li>Strings</li>
+          </ul>
+          <p>Strings: </p>
+          <ul>
+            <li>Escape Sequences in Strings</li>
+            <li>Raw Strings</li>
+            <li>Triple-Quoted Strings</li>
+            <li>Boolean Type, Boolean Context, and “Truthiness”</li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="if...else_statement">
+        <header>if...else statement</header>
+        <article>
+          The if…elif…else statement is used in Python for decision making.
+          <code>Syntax:
+            if test expression:
+                statement(s)
+          </code>
+          <p>
+            For additional details click <a href="https://www.programiz.com/python-programming/if-elif-else">here</a>
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="while_statement">
+        <header>while statement</header>
+        <article>
+          With the while loop we can execute a set of statements as long as a condition is true.
+          <code>Print i as long as its less than 6:
+              i = 1
+              while i < 6:
+                  print(i)
+                  i += 1</code>
+          <p>For additional details click <a href="https://www.w3schools.com/python/python_while_loops.asp">here</a></p>
+        </article>
+      </section>
+      <section class="main-section" id="Function_declarations">
+        <header>Function declarations</header>
+        <article>
+            <p>
+              The concept of a function is one of the most important ones in mathematics. A common usage of functions in computer languages is to implement mathematical functions. Such a function is computing one or more results, which are entirely determined by the parameters passed to it.<br><br>
+              In the most general sense, a function is a structuring element in programming languages to group a set of statements so they can be utilized more than once in a program. The only way to accomplish this without functions would be to reuse code by copying it and adapt it to its different context. Using functions usually enhances the comprehensibility and quality of the program. It also lowers the cost for development and maintenance of the software.<br><br>
+              Functions are known under various names in programming languages, e.g. as subroutines, routines, procedures, methods, or subprograms. <br><br>
+              A function in Python is defined by a def statement. The general syntax looks like this:
+            </p>
+            <code>Example:
+              def function-name(Parameter list):
+                  statements, i.e. the function body</code>
+        </article>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              All the documentation in this page is taken from
+              <a href="https://docs.python.org/3/" target="_blank">Python 3.7.4rc1 documentation</a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+  </body>
+
+</html>
