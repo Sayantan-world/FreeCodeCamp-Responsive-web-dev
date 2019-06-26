@@ -8,4 +8,4 @@
 ### 4) Technical Documentation Page
 ### 5) Personal Portfolio Webpage
 ### 6) Certificate
-        *Verify this certification at: https://www.freecodecamp.org/certification/sayantan_world/responsive-web-design*
+*Verify this certification at: https://www.freecodecamp.org/certification/sayantan_world/responsive-web-design*
